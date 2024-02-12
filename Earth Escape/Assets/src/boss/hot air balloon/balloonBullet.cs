@@ -8,20 +8,21 @@ public class balloonBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject clone = Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(clone, 0.06f);
-        Destroy(gameObject);
-    }
+        if (collision.gameObject.CompareTag("boss")) return;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
         GameObject clone = Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(clone, 0.06f);
-        Destroy(gameObject);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<cameraShake>().StartCoroutine("Shaking");
+        Destroy(clone, 1.5f);
+        if (gameObject != null)
+            gameObject.SetActive(false);
     }
 
     private void Update()
     {
         transform.position -= new Vector3(0f, Time.deltaTime * 3, 0f);
+    }
+    private void Start()
+    {
+        Destroy(gameObject, 5f);   
     }
 }

@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 7259795934403807777}
   - component: {fileID: 7259795934403807776}
   - component: {fileID: 7259795934403807779}
+  - component: {fileID: -691690551536044838}
   - component: {fileID: 7259795934403807778}
   - component: {fileID: 7259795934403807781}
+  - component: {fileID: -6240626340176007684}
   m_Layer: 0
   m_Name: bullet
   m_TagString: boss
@@ -103,6 +105,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.48, y: 2.34}
   m_Direction: 0
+--- !u!114 &-691690551536044838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259795934403807780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74339f3fcb4e8b48b2aed2dd991a88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 738524737554766022, guid: 63d5d92389c56494689c56714eee8249, type: 3}
 --- !u!198 &7259795934403807778
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4882,3 +4897,24 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!50 &-6240626340176007684
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259795934403807780}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5

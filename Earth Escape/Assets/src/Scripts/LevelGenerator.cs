@@ -63,25 +63,31 @@ public class LevelGenerator : MonoBehaviour
         originalFOV = mainCamera.fieldOfView;
         isBoss = false;
 
+        Scorer.addScore = 0;
         if (mode.Equals("troposphere"))
         {
             background.sprite = tropos;
+            Scorer.addScore = 0;
         }
         if (mode.Equals("stratosphere"))
         {
             background.sprite = stratos;
+            Scorer.addScore = 20000;
         }
         if (mode.Equals("mesosphere"))
         {
             background.sprite = mesos;
+            Scorer.addScore = 50000;
         }
         if (mode.Equals("thermosphere"))
         {
             background.sprite = thermos;
+            Scorer.addScore = 85000;
         }
         if (mode.Equals("exosphere"))
         {
             background.sprite = exos;
+            Scorer.addScore = 200000;
         }
 
 
@@ -267,7 +273,7 @@ public class LevelGenerator : MonoBehaviour
             {
                 if(height >= 20000)
                 {
-                    //spawnBoss(hotAirBalloon);
+                    spawnBoss(sun);
                     //wag na daw ilagay
                 }
             }
@@ -291,16 +297,14 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (height >= 200000)
                 {
-                    //spawnBoss(ufo);
-                    //wala pa
+                    spawnBoss(ufo);
                 }
             }
             if (mode.Equals("exosphere"))
             {
                 if (height >= 400000)
                 {
-                    //spawnBoss(sun);
-                    //wala pa
+                    spawnBoss(sun);
                 }
             }
         }

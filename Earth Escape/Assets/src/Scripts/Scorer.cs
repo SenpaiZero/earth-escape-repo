@@ -11,10 +11,10 @@ public class Scorer : MonoBehaviour
     public static int multiplier = 100;
     public static float currentMaxHeight = 0;
     public static float score = 0;
+    public static float addScore { get; set; }
     
     void Start()
     {
-
         if (scoreText == null)
         {
             scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Text>();
@@ -31,7 +31,7 @@ public class Scorer : MonoBehaviour
         {
             currentMaxHeight = posY;
             if (StoragePrefs.scoreMult <= 0) StoragePrefs.scoreMult = 1;
-            score = (currentMaxHeight * (multiplier * StoragePrefs.scoreMult));
+            score = (currentMaxHeight * (multiplier * StoragePrefs.scoreMult)) + addScore;
             scoreText.text = score.ToString("0");
         } 
 
