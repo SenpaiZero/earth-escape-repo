@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe6da5fc03013b4287efc03fc140c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmation: {fileID: 6617037935281921467, guid: 28b8f1b432db77b4a99acd9535e4f71e, type: 3}
   itemName: JumpingBoots
   itemPrice: 0
   coinText: {fileID: 0}
@@ -2586,6 +2587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bb509624d600a4a871bb9085ac8953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmation: {fileID: 6617037935281921467, guid: 28b8f1b432db77b4a99acd9535e4f71e, type: 3}
   items: []
   coinText: {fileID: 2090898491}
 --- !u!1 &2090898491

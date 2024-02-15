@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
-
+    public GameObject confirmation;
     enum Items
     {
         JumpingBoots,
@@ -26,14 +27,7 @@ public class ShopScript : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-  
-
+    
     public void OnBuyItem(string priceAndName)
     {
         // split price and name
@@ -45,20 +39,43 @@ public class ShopScript : MonoBehaviour
         // check if player has enough coins
         if (coins >= price)
         {
+            GameObject confirm = Instantiate(confirmation);
+            confirm.GetComponentInChildren<confirmation>().title = "Are you sure you want to buy the item?";
+            confirm.GetComponentInChildren<confirmation>().negativeDesc = "NO";
+            confirm.GetComponentInChildren<confirmation>().positiveDesc = "YES";
+
+            StartCoroutine(isBuy(confirm, price));
+
+        }
+    }
+
+    bool isRunning;
+    IEnumerator isBuy(GameObject popup, int price)
+    {
+        if (isRunning) yield return null;
+
+        isRunning = true;
+        bool isBuys = popup.GetComponent<confirmation>().getIsPositive;
+        if (!popup.activeInHierarchy) yield return null;
+
+        if (isBuys)
+        {
             // reduce coins
             coins -= price;
             coinText.GetComponent<TextMeshProUGUI>().text = coins.ToString();
             StoragePrefs.ReduceCoin(price);
             // buy item
             StoragePrefs.BuyItem(name);
-            // update UI
-            //GameObject item = GameObject.Find(name);
-            //item.transform.GetChild(0).gameObject.SetActive(false);
-            //item.transform.GetChild(1).gameObject.SetActive(true);
-            
         }
+        else
+        {
+            StartCoroutine(isBuy(popup, price));
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        isRunning = false;
     }
-   
+
 }
 
 

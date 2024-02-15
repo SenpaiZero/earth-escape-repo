@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class ShopButton : MonoBehaviour
 {
-
+    public GameObject confirmation;
     public string itemName;
     public int itemPrice;
     public GameObject coinText;
@@ -63,12 +64,30 @@ public class ShopButton : MonoBehaviour
         }
         // split price and name
 
-       
-       
-     
-       
+
         // check if player has enough coins
         if (coins >= price)
+        {
+            GameObject confirm = Instantiate(confirmation);
+            confirm.GetComponentInChildren<confirmation>().title = "Are you sure you want to buy the item?";
+            confirm.GetComponentInChildren<confirmation>().negativeDesc = "NO";
+            confirm.GetComponentInChildren<confirmation>().positiveDesc = "YES";
+
+            StartCoroutine(isBuy(confirm, price, tmp, coins));
+
+        }
+    }
+
+    bool isRunning;
+    IEnumerator isBuy(GameObject popup, int price, TextMeshProUGUI tmp, int coins)
+    {
+        if (isRunning) yield return null;
+
+        isRunning = true;
+        bool isBuys = popup.GetComponent<confirmation>().getIsPositive;
+        if (!popup.activeInHierarchy) yield return null;
+
+        if (isBuys)
         {
             // reduce coins
             coins -= price;
@@ -78,8 +97,15 @@ public class ShopButton : MonoBehaviour
             // buy item
             StoragePrefs.BuyItem(name);
             // update UI
-           
+
             tmp.text = "Equip";
         }
+        else
+        {
+            StartCoroutine(isBuy(popup, price, tmp, coins));
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        isRunning = false;
     }
 }
