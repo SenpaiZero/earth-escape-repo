@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameMenuLogic : MonoBehaviour
 {
     public GameObject confirmation;
+
     private void Start()
     {
         if (playerPrefScript.getUsername().Replace("\u200B", "").Equals("ADMIN"))
@@ -27,6 +28,7 @@ public class GameMenuLogic : MonoBehaviour
         SceneManager.LoadScene(4, LoadSceneMode.Single);
         Scorer.currentMaxHeight = 0;
         Input.ResetInputAxes();
+
     }
 
     public void OnClickShop()

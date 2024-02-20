@@ -2138,6 +2138,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc8e0cc8274bfd49a2e4a678c67b74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chars:
+  - {fileID: 9100000, guid: 108fa00acfb91e948b2a42d70dca2a5a, type: 2}
+  - {fileID: 9100000, guid: f3062a9cd741c1d4b8e5c987afa3a5ab, type: 2}
+  - {fileID: 9100000, guid: b7932a4cb12bf7a4f97aa4c41c5a1002, type: 2}
+  Defchars:
+  - {fileID: 11881565, guid: 010347b621b89774eb24c981a227e0a3, type: 3}
+  - {fileID: 1217655095, guid: 44d0c651f1cbe5546b7d47ccfb48d50a, type: 3}
+  - {fileID: -16077795, guid: 22a0f15710aff8145aeb0781e39cbea4, type: 3}
   movementSpeed: 10
   touchSensitivity: 4
   jetpackTime: 2

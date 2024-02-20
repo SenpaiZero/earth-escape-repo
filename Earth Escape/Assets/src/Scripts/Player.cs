@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -12,7 +13,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
     enum CharacterState
     {
         Idle,
@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
         JumpLeft,
         Jetpack
     }
+
+    public AnimatorController[] chars;
+    public Sprite[] Defchars;
 
     public float movementSpeed = 10f;
     public float touchSensitivity = 4f;
@@ -40,6 +43,12 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>(); 
         anim = GetComponent<Animator>();
+        anim.runtimeAnimatorController = chars[playerPrefScript.getCharacter()];
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = Defchars[playerPrefScript.getCharacter()];
+
+        
     }
 
     // Update is called once per frame

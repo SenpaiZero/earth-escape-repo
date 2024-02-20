@@ -97,4 +97,16 @@ public class playerPrefScript : MonoBehaviour
     {
         return PlayerPrefs.HasKey(getUsername() + "_reward");
     }
+
+    public static void setCharacter(int index)
+    {
+        PlayerPrefs.SetInt(getUsername() + "_char", index);
+        save();
+    }
+
+    public static int getCharacter()
+    {
+        Debug.Log(PlayerPrefs.GetInt(getUsername() + "_char", 0));
+        return PlayerPrefs.GetInt(getUsername() + "_char", 0);
+    }
 }

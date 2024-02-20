@@ -34,7 +34,10 @@ public class gameMenuScript : playerPrefScript
     {
         LevelGenerator.mode = scene;
         SceneManager.LoadScene(1);
+
+        musicScript musicScript = GameObject.FindGameObjectWithTag("Music").GetComponent<musicScript>();
+        musicScript.changeMusic(musicScript.music.Game);
     }
 
-    
+
 }
