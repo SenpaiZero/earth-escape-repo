@@ -33,6 +33,9 @@ public class Player : MonoBehaviour
     private bool hasJetPack = false;
     public Image scoreMult, coinMult;
 
+    public AudioSource powerupSfx;
+    public AudioSource coinsSfx;
+
     float score;
     CharacterState currentState = CharacterState.Idle;
     public GameObject deadPopup;
@@ -132,6 +135,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Jetpack"))
         {
+            powerupSfx.Play();
             hasJetPack = true;
             collision.gameObject.SetActive(false);
             // jet pack for 2 secs
@@ -141,10 +145,12 @@ public class Player : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("coinMult"))
         {
+            powerupSfx.Play();
             StartCoroutine(coinMultTrigger(collision.gameObject));
         }
         else if(collision.gameObject.CompareTag("scoreMult"))
         {
+            powerupSfx.Play();
             StartCoroutine(scoreMultTrigger(collision.gameObject));
         }
         else if(collision.gameObject.CompareTag("boss"))
@@ -153,6 +159,10 @@ public class Player : MonoBehaviour
             //popup
             scoreTxt.text = score.ToString("0");
             deadPopup.SetActive(true);
+        }
+        else if(collision.gameObject.CompareTag("coins"))
+        {
+            coinsSfx.Play();
         }
     }
 

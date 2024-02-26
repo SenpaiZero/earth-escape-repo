@@ -11,10 +11,9 @@ public class PickUpCoin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-           
             CoinCounter.coinCount += amount;
             //get tag CoinText
-           Text cointCounter = GameObject.FindGameObjectWithTag("CoinText").GetComponent<Text>();
+            Text cointCounter = GameObject.FindGameObjectWithTag("CoinText").GetComponent<Text>();
 
             int parseText = int.Parse(cointCounter.text);
             int newCoin = parseText + amount;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3749612656973923568}
   m_Layer: 0
   m_Name: treasure
-  m_TagString: Untagged
+  m_TagString: coins
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

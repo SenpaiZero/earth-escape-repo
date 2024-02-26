@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,9 @@ using UnityEngine.SceneManagement;
 public class GameMenuLogic : MonoBehaviour
 {
     public GameObject confirmation;
+    public GameObject container;
+    public GameObject character;
+    public GameObject popup;
 
     private void Start()
     {
@@ -22,6 +26,19 @@ public class GameMenuLogic : MonoBehaviour
             Debug.Log("Admin debug activated");
         }
 
+    }
+    public void OnClickCharacter()
+    {
+        if (!StoragePrefs.GetEquipItem("characterMenu").Equals("characterMenu"))
+        {
+            GameObject clone = Instantiate(popup);
+            clone.GetComponentInChildren<TextMeshProUGUI>().text = "YOU NEED TO UNLOCK CHARACTER FIRST!";
+            Destroy(clone, 5f);
+            return;
+        }
+
+        container.SetActive(true);
+        character.SetActive(true);
     }
     public void OnClickPlay()
     {

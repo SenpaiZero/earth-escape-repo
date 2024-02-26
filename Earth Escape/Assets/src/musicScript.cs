@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,29 +6,47 @@ using UnityEngine.SceneManagement;
 
 public class musicScript : MonoBehaviour
 {
-    public enum music {
-        Passive,
-        Game
-    }
+    public AudioSource passiveBgm;
+    public AudioSource gameBgm;
 
-    music MusicType;
-
-    public AudioClip[] clips;
-    public AudioSource audio;
     private void Start()
     {
+        GameObject[] musics = GameObject.FindGameObjectsWithTag("Music");
+        if (musics.Length > 1)
+        {
+            for (int i = 1; i < musics.Length; i++)
+            {
+                Destroy(musics[i]);
+            }
+        }
+
         DontDestroyOnLoad(gameObject);
+        StartCoroutine(changeMusic());
     }
-    public static music newState { get; set; }
-    public void changeMusic(music game)
+    IEnumerator changeMusic()
     {
-        int index = 0;
-        if (newState == music.Passive)
-            index = 0;
-        else
-            index = 1;
-        audio.clip = clips[index];
-        audio.Play();
+        while(true)
+        {
+            string scene = SceneManager.GetActiveScene().name;
+            if (scene.Equals("MainMenus"))
+            {
+                if (!passiveBgm.isPlaying)
+                {
+                    passiveBgm.Play();
+                    gameBgm.Stop();
+                }
+            }
+            else if (scene.Equals("InGameScene"))
+            {
+                if (!gameBgm.isPlaying)
+                {
+                    gameBgm.Play();
+                    passiveBgm.Stop();
+                }
+            }
+
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
     }
 
 }

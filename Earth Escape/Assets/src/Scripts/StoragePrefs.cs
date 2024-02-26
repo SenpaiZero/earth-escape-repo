@@ -46,14 +46,14 @@ public class StoragePrefs : playerPrefScript{
     }
 
     
-    public static string GetEquipItem()
+    public static string GetEquipItem(string name)
     {
-        return PlayerPrefs.GetString(getUsername() + "_equipItem", null);
+        return PlayerPrefs.GetString(getUsername() + "_equipItem_" + name, null);
     }
 
     public static void EquipItem(string name)
     {
-        PlayerPrefs.SetString(getUsername() + "_equipItem", name);
+        PlayerPrefs.SetString(getUsername() + "_equipItem_" + name, name);
         PlayerPrefs.Save();
     }
     

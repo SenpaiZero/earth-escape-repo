@@ -19,6 +19,6 @@ public class InitilalizeScript : MonoBehaviour
 
     public static string EquipItem()
     {
-        return StoragePrefs.GetEquipItem();
+        return StoragePrefs.GetEquipItem("JumpingBoots");
     }
 }

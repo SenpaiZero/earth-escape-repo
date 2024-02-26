@@ -16,12 +16,18 @@ public class ShopButton : MonoBehaviour
         // get the Button Text
         var tmp = GetComponentInChildren<TextMeshProUGUI>();
 
-        if(itemName == StoragePrefs.GetEquipItem())
+        if(itemName == StoragePrefs.GetEquipItem("JumpingBoots"))
         {
             tmp.text = "Equipped";
             // interactable button
             gameObject.GetComponent<UnityEngine.UI.Button>().interactable = false;
-
+            return;
+        }
+        if (itemName == StoragePrefs.GetEquipItem("characterMenu"))
+        {
+            tmp.text = "Equipped";
+            // interactable button
+            gameObject.GetComponent<UnityEngine.UI.Button>().interactable = false;
             return;
         }
         // if already purchased set text to Equip
