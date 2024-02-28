@@ -16,6 +16,7 @@ TagManager:
   - deadPopup
   - Music
   - coins
+  - bossTimer
   layers:
   - Default
   - TransparentFX

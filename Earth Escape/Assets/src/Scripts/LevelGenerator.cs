@@ -50,6 +50,7 @@ public class LevelGenerator : MonoBehaviour
     public float zoomAmount = 2.0f;  // Adjust this value to control the zoom amount
     public float zoomDuration = 3.0f;  // Adjust this value to control the duration of the zoom
 
+    public GameObject timerBoss;
     GameObject targetObject;
     private Camera mainCamera;
     private float originalFOV;
@@ -247,7 +248,6 @@ public class LevelGenerator : MonoBehaviour
     private void Update()
     {
         float height = Scorer.score;
-        Debug.Log(height);
         if(mode.Equals("freeplay"))
         {
             if(height > 20000 && height < 50000)
@@ -273,7 +273,7 @@ public class LevelGenerator : MonoBehaviour
             {
                 if(height >= 20000)
                 {
-                    spawnBoss(sun);
+                    //spawnBoss(sun);
                     //wag na daw ilagay
                 }
             }
@@ -322,8 +322,20 @@ public class LevelGenerator : MonoBehaviour
     IEnumerator spawn(GameObject boss)
     {
         Instantiate(bossWarning, mainCamera.transform.position, Quaternion.identity);
+        GameObject timerClone = Instantiate(timerBoss);
+        bossTimer bClass = timerClone.GetComponentInChildren<bossTimer>();
+        if (mode.Equals("mesosphere"))
+            bossTimer.setBossName = bClass.hotair();
+        else if (mode.Equals("thermosphere"))
+            bossTimer.setBossName = bClass.ufo();
+        else if (mode.Equals("exosphere"))
+            bossTimer.setBossName = bClass.sun();
+        else
+            bossTimer.setBossName = "";
         yield return new WaitForSeconds(5f);
         GameObject clone = Instantiate(boss, mainCamera.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(30f);
+        //animate boss death / dialogue
     }
     private bool PositionChecker(Vector3 position)
     {

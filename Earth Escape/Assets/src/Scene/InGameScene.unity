@@ -2431,6 +2431,7 @@ MonoBehaviour:
   maxY: 2.2
   zoomAmount: 2
   zoomDuration: 3
+  timerBoss: {fileID: 4652345700755803373, guid: 5428810c6e1138d44878dc146d0b876f, type: 3}
   backgrounds: []
 --- !u!4 &1639163432
 Transform:

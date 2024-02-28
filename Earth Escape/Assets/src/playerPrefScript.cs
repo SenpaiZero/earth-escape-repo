@@ -109,4 +109,15 @@ public class playerPrefScript : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt(getUsername() + "_char", 0));
         return PlayerPrefs.GetInt(getUsername() + "_char", 0);
     }
+
+    public static void setBossCount(int count)
+    {
+        PlayerPrefs.SetInt(getUsername() + "_bossCount", count);
+        save();
+    }
+
+    public static int getBossCount()
+    {
+        return PlayerPrefs.GetInt(getUsername() + "_bossCount", 0);
+    }
 }
