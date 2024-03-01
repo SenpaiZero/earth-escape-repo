@@ -2422,7 +2422,7 @@ MonoBehaviour:
   hotAirBalloon: {fileID: 8607439689575019177, guid: 437416911ee0fbf4c99aa5ab00e54b87, type: 3}
   jettAirplain: {fileID: 0}
   meteor: {fileID: 0}
-  ufo: {fileID: 0}
+  ufo: {fileID: 9013061451523172548, guid: eb49774d5962013459f98e3b62c804ce, type: 3}
   sun: {fileID: 578028643039739744, guid: 16fa2dc58fb081b44b42b783490547c2, type: 3}
   bossWarning: {fileID: 4369420550511399073, guid: f0619dbbc563d0a41bdd5ec851267bae, type: 3}
   level: 1

@@ -24,9 +24,9 @@ public class gameMenuScript : playerPrefScript
             stratosphere.interactable= true;
         if(score >= 50000)
             mesosphere.interactable = true;
-        if (score >= 85000)
+        if (score >= 85000 && getBossCount() >= 1)
             thermosphere.interactable = true;
-        if (score >= 200000)
+        if (score >= 200000 && getBossCount() >= 2)
             exosphere.interactable = true;
 
     }

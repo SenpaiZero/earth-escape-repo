@@ -51,14 +51,20 @@ public class bossTimer : MonoBehaviour
             }
 
             if (setBossName.Equals(hotair()))
+            {
                 if (playerPrefScript.getBossCount() < 1)
                     playerPrefScript.setBossCount(1);
-                else if (setBossName.Equals(ufo()))
-                    if (playerPrefScript.getBossCount() < 2)
-                        playerPrefScript.setBossCount(2);
-                    else if (setBossName.Equals(sun()))
-                        if (playerPrefScript.getBossCount() < 3)
-                            playerPrefScript.setBossCount(3);
+            }
+            else if (setBossName.Equals(ufo()))
+            {
+                if (playerPrefScript.getBossCount() < 2)
+                    playerPrefScript.setBossCount(2);
+            }
+            else if (setBossName.Equals(sun()))
+            {
+                if (playerPrefScript.getBossCount() < 3)
+                    playerPrefScript.setBossCount(3);
+            }
 
             // Show a success popup
             Debug.Log("Boss timer is 0");

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameMenuLogic : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class GameMenuLogic : MonoBehaviour
     public void OnClickPlay()
     {
         SceneManager.LoadScene(4, LoadSceneMode.Single);
+        Scorer.score = 0;
         Scorer.currentMaxHeight = 0;
         Input.ResetInputAxes();
 
