@@ -334,6 +334,8 @@ public class LevelGenerator : MonoBehaviour
             bossTimer.setBossName = "";
         yield return new WaitForSeconds(5f);
         GameObject clone = Instantiate(boss, mainCamera.transform.position, Quaternion.identity);
+        bossTimer.bossObj = clone;
+
         yield return new WaitForSeconds(30f);
         //animate boss death / dialogue
     }

@@ -12,6 +12,7 @@ public class bossTimer : MonoBehaviour
     private float timer, maxTimer;
 
     public static string setBossName { get; set; }
+    public static GameObject bossObj { get; set; }
 
     void Start()
     {
@@ -68,7 +69,7 @@ public class bossTimer : MonoBehaviour
 
             // Show a success popup
             Debug.Log("Boss timer is 0");
-            Time.timeScale = 0;
+            Destroy(bossObj);
         }
            
     }

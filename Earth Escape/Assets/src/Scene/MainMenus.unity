@@ -3020,29 +3020,29 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538464609}
-        m_TargetAssemblyTypeName: GameMenuLogic, Assembly-CSharp
-        m_MethodName: OnClickCharacter
-        m_Mode: 1
+      - m_Target: {fileID: 2127301557}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1314789447}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 2102533796}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &537382524
 MonoBehaviour:
@@ -4590,6 +4590,7 @@ GameObject:
   - component: {fileID: 824902329}
   - component: {fileID: 824902328}
   - component: {fileID: 824902327}
+  - component: {fileID: 824902330}
   m_Layer: 0
   m_Name: bg 256x454_0
   m_TagString: Untagged
@@ -4684,6 +4685,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824902330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824902326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424b41fe7ea09014e9658f50535d4e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &872367440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5424,30 +5437,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2127301557}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2127301557}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10936,6 +10925,8 @@ MonoBehaviour:
   - {fileID: 1217655095, guid: 44d0c651f1cbe5546b7d47ccfb48d50a, type: 3}
   - {fileID: -16077795, guid: 22a0f15710aff8145aeb0781e39cbea4, type: 3}
   charImg: {fileID: 1662603702}
+  applyBtnTxt: {fileID: 47058146}
+  insuMoney: {fileID: 8675845138568423342, guid: f36232f3c0951a847b610be48de01cbd, type: 3}
 --- !u!1 &2127301557
 GameObject:
   m_ObjectHideFlags: 0

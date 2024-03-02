@@ -104,6 +104,17 @@ public class playerPrefScript : MonoBehaviour
         save();
     }
 
+    public static void setCharacterBuy(int index)
+    {
+        PlayerPrefs.SetInt(getUsername() + "_char" + index, 1);
+        save();
+    }
+    public static int getCharacterBuy(int index)
+    {
+        if (index == 0)
+            return 1;
+        return PlayerPrefs.GetInt(getUsername() + "_char" + index, 0);
+    }
     public static int getCharacter()
     {
         Debug.Log(PlayerPrefs.GetInt(getUsername() + "_char", 0));

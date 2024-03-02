@@ -26,7 +26,6 @@ public class GameMenuLogic : MonoBehaviour
 
             Debug.Log("Admin debug activated");
         }
-
     }
     public void OnClickCharacter()
     {
@@ -83,5 +82,5 @@ public class GameMenuLogic : MonoBehaviour
         isRunning = false;
     }
 
-
+    
 }
