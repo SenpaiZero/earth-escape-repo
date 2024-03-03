@@ -2433,6 +2433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solidPlatfom: {fileID: 1050355231766078455, guid: adfa39751dc0e6248bf3d3362bbc035e, type: 3}
   crackedPlatform: {fileID: 2995623149352558504, guid: d0ac92cfb2d9e65429ea51b2a0eef219, type: 3}
+  tutorialPopup: {fileID: 6006099654673994477, guid: 902b2917f02594344a236fc74955fffc, type: 3}
   coins: {fileID: 3749612656973923573, guid: 98e05b71859c6c44a8d8a9aa42c3c3ac, type: 3}
   treasure: {fileID: 3749612656973923573, guid: f8d15069841aa4f49bf6b92b347102eb, type: 3}
   coinMult: {fileID: 8635516471630163158, guid: ae8b5f597ce77114596419495b85de45, type: 3}
@@ -3120,7 +3121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9183429620172963417, guid: 03adb4e4e54a1cb469df8cea533a05ef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -52.44995
+      value: -52.450195
       objectReference: {fileID: 0}
     - target: {fileID: 9183429620172963417, guid: 03adb4e4e54a1cb469df8cea533a05ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

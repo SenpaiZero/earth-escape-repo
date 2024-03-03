@@ -7,6 +7,8 @@ public class LevelGenerator : MonoBehaviour
 
     public GameObject solidPlatfom;
     public GameObject crackedPlatform;
+
+    public GameObject tutorialPopup;
     
     public GameObject coins;
     public GameObject treasure;
@@ -69,6 +71,8 @@ public class LevelGenerator : MonoBehaviour
         {
             background.sprite = tropos;
             Scorer.addScore = 0;
+
+            Instantiate(tutorialPopup);
         }
         if (mode.Equals("stratosphere"))
         {
