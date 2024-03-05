@@ -19,6 +19,7 @@ public class gameMenuScript : playerPrefScript
 
         int score = getProfileHighScore();
         Debug.Log("Current highscore: " + score);
+        Debug.Log("Boss Count: " + getBossCount());
         troposphere.interactable = true;
         if(score >= 20000)
             stratosphere.interactable= true;

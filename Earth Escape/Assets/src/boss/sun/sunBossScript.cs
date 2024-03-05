@@ -31,7 +31,7 @@ public class sunBossScript : MonoBehaviour
     {
         isMove = true;
         int rand = Random.Range(0, positions.Length);
-        GameObject warnClone = Instantiate(warning, new Vector2(positions[rand].position.x, positions[rand].position.y + 3), Quaternion.identity);
+        GameObject warnClone = Instantiate(warning, new Vector2(positions[rand].position.x, positions[rand].position.y + 2), Quaternion.identity);
         warnClone.transform.SetParent(positions[rand]);
         yield return new WaitForSeconds(5);
         Destroy(warnClone);

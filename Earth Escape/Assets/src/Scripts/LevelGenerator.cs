@@ -273,9 +273,15 @@ public class LevelGenerator : MonoBehaviour
         }
         else
         {
+            bool isAdmin = playerPrefScript.getUsername().Replace("\u200B", "").Equals("ADMIN");
             if (mode.Equals("troposphere"))
             {
-                if(height >= 20000)
+                if(isAdmin)
+                {
+                    if (height >= 20000)
+                        spawnBoss(sun);
+                }
+                if (height >= 20000)
                 {
                     //spawnBoss(sun);
                     //wag na daw ilagay
@@ -291,24 +297,48 @@ public class LevelGenerator : MonoBehaviour
             }
             if (mode.Equals("mesosphere"))
             {
-                if (height >= 85000)
+                if (isAdmin)
                 {
-                    //spawnBoss(meteor);
-                    spawnBoss(hotAirBalloon);
+                    if (height >= 60000)
+                        spawnBoss(hotAirBalloon);
                 }
+                else
+                {
+                    if (height >= 85000)
+                    {
+                        //spawnBoss(meteor);
+                        spawnBoss(hotAirBalloon);
+                    }
+                }
+                
             }
             if (mode.Equals("thermosphere"))
             {
-                if (height >= 200000)
+                if (height >= 95000)
                 {
+                    //spawnBoss(meteor);
                     spawnBoss(ufo);
+                }
+                else
+                {
+                    if (height >= 200000)
+                    {
+                        spawnBoss(ufo);
+                    }
                 }
             }
             if (mode.Equals("exosphere"))
             {
-                if (height >= 400000)
+                if (height >= 210000)
                 {
                     spawnBoss(sun);
+                }
+                else
+                {
+                    if (height >= 400000)
+                    {
+                        spawnBoss(sun);
+                    }
                 }
             }
         }
